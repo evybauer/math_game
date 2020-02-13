@@ -16,13 +16,20 @@ class Game
 
   def round
     puts '----- NEW TURN -----'
-    #ask a question
+    ask_question = Questions.new(@current_player)
 
     if !ask_question.correct
-    #something
+      incorrect_decrement_lives
     end
 
-    #result of round
+    if @current_player == 'Player 1'
+      @current_player = 'Player 2'
+
+    else @current_player == 'Player 2'
+     @current_player = 'Player 1'
+
+    end
+    
     puts "P1: #{@player_1_lives} vs P2: #{@player_2_lives}"
   end
 
