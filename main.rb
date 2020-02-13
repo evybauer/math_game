@@ -24,5 +24,33 @@ class Game
 
     #result of round
     puts "P1: #{@player_1_lives} vs P2: #{@player_2_lives}"
+  end
 
+  def incorrect_decrement_lives
+    if @current_player == 'Player 1'
+      @first_player.incorrect_decrement_lives
+      @player_1_lives = "#{@first_player.lives}/3"
+
+      if @first_player.lives === 0
+        @end = true
+        puts '----- GAME OVER -----'
+
+      end
+
+    else
+      @second_player.incorrect_decrement_lives
+      @player_2_lives = "#{@second_player.lives}/3"
+
+      if @second_player.lives === 0
+        @end = true
+        puts '----- GAME OVER -----'
+
+      end
+
+    end
+
+  end
 end
+
+
+start = Game.new
