@@ -1,10 +1,6 @@
-class Players
-  attr_accessor :name, :score, :lives
+class Player
 
-  def initialize(name, score = 0, lives = 3)
-    @name = name
-    @score = score
-    @lives = lives
+  def initialize
   end
-
+  
 end
