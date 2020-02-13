@@ -8,6 +8,10 @@ class Game
 
     @first_player = Player.new
     @second_player = Player.new
+
+    @player_1_lives = "#{@first_player.lives}/3"
+    @player_2_lives = "#{@second_player.lives}/3"
+    
   end 
-  
+
 end
