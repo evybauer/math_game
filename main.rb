@@ -3,6 +3,8 @@ require './questions.rb'
 
 class Game
 
+  attr_accessor :playerround
+
   def initialize
     @current_player = 'Player 1'
 
@@ -12,6 +14,11 @@ class Game
     @player_1_lives = "#{@first_player.lives}/3"
     @player_2_lives = "#{@second_player.lives}/3"
 
+    @end = false
+
+    until @end
+      round
+    end
   end 
 
   def round
@@ -29,7 +36,7 @@ class Game
      @current_player = 'Player 1'
 
     end
-    
+
     puts "P1: #{@player_1_lives} vs P2: #{@player_2_lives}"
   end
 
@@ -53,9 +60,7 @@ class Game
         puts '----- GAME OVER -----'
 
       end
-
     end
-
   end
 end
 
